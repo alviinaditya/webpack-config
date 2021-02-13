@@ -20,10 +20,12 @@ const multipleHtmlPlugin = htmlPageNames.map((name)=> new HtmlWebpackPlugin({
 module.exports = {
     target: 'web',
     entry: path.resolve(env.paths.in, 'js', 'main.js'),
+    
     output: {
         filename: 'js/app.js',
         path: env.paths.out
     },
+
     module: {
         rules: [
             {

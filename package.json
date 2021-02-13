@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "author": "Uplex",
   "scripts": {
     "build": "webpack --config config/webpack.dev.config.js --mode=development",
     "watch": "webpack --config config/webpack.dev.config.js --mode=development --watch",
