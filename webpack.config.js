@@ -14,20 +14,12 @@ const multipleHtmlPlugin = htmlPageNames.map((name)=> new HtmlWebpackPlugin({
     filename: name,
     template: path.resolve(env.paths.in, 'templates', name),
     favicon: path.resolve(env.paths.in, 'images', 'favicon.ico'),
-    hash: false
+    hash: false,
 }));
 
-// let mode = "development";
-// let devtool = "source-map";
-// if(process.env.NODE_ENV === "production") {
-//     mode = "production";
-//     devtool= false;
-// }
-
 module.exports = {
-    // mode: mode,
     target: 'web',
-    entry: path.resolve(env.paths.in, 'js', 'app.js'),
+    entry: path.resolve(env.paths.in, 'js', 'main.js'),
     output: {
         filename: 'js/app.js',
         path: env.paths.out
@@ -40,7 +32,15 @@ module.exports = {
                     MiniCssExtractPlugin.loader, 
                     'css-loader',
                     'postcss-loader',
-                    'sass-loader'
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require("sass"),
+                            sassOptions: {
+                                fiber: require("fibers"),
+                            },
+                        }
+                    }
                 ],
             },
             {
