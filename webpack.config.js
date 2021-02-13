@@ -17,15 +17,15 @@ const multipleHtmlPlugin = htmlPageNames.map((name)=> new HtmlWebpackPlugin({
     hash: false
 }));
 
-let mode = "development";
-let devtool = "source-map";
-if(process.env.NODE_ENV === "production") {
-    mode = "production";
-    devtool= false;
-}
+// let mode = "development";
+// let devtool = "source-map";
+// if(process.env.NODE_ENV === "production") {
+//     mode = "production";
+//     devtool= false;
+// }
 
 module.exports = {
-    mode: mode,
+    // mode: mode,
     target: 'web',
     entry: path.resolve(env.paths.in, 'js', 'app.js'),
     output: {
