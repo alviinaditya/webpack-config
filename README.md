@@ -1,1 +1,1 @@
-"# webpack-config" 
+# Simple Webpack 5 Configuration
